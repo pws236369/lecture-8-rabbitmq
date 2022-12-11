@@ -1,1 +1,2 @@
-export const GET_SEGEL = "/api/segel";
+export const POST_ORDER = "POST /api/order";
+export const PUT_ITEM = "PUT /api/inventory";
