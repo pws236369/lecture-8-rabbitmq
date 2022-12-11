@@ -6,8 +6,10 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "node ./dist/index.js",
-    "dev": "tsc-watch --onSuccess \"node ./dist/index.js\" --compiler typescript/bin/tsc"
+    "start-publisher": "node ./dist/publisher.js",
+    "start-consumer": "node ./dist/consumer.js",
+    "dev-publisher": "tsc-watch --onSuccess \"node ./dist/publisher.js\" --compiler typescript/bin/tsc",
+    "dev-consumer": "tsc-watch --onSuccess \"node ./dist/consumer.js\" --compiler typescript/bin/tsc"
   },
   "keywords": [],
   "author": "nissano-wsp-2022",

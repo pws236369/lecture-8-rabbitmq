@@ -5,7 +5,7 @@ import { createServer, IncomingMessage, ServerResponse } from "http";
 import { getExample, mainRoute } from "./routes.js";
 import { GET_SEGEL } from "./const.js";
 
-const port = process.env.PORT || 3000;
+const port = 3000;
 
 const server = createServer((req: IncomingMessage, res: ServerResponse) => {
   const route = req.url;
@@ -14,10 +14,10 @@ const server = createServer((req: IncomingMessage, res: ServerResponse) => {
       getExample(req, res);
       break;
     default:
-      mainRoute(req, res);
+      mainRoute(req, res, "Publisher");
       break;
   }
 });
 
 server.listen(port);
-console.log(`Server running! port ${port}`);
+console.log(`Publisher running! port ${port}`);
