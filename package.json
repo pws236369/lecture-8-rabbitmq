@@ -20,6 +20,8 @@
     "typescript": "^4.9.3"
   },
   "dependencies": {
+    "@types/amqplib": "^0.10.0",
+    "amqplib": "^0.10.3",
     "node-fetch": "^3.3.0"
   }
 }
