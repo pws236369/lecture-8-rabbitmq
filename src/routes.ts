@@ -1,4 +1,6 @@
 import { IncomingMessage, ServerResponse } from "http";
+import fetch from "node-fetch";
+import { sendRequest } from "./utils.js";
 
 const exampleData = {
   title: "This is nice example",
@@ -26,6 +28,13 @@ export const createOrder = (req: IncomingMessage, res: ServerResponse) => {
     // Parse request body as JSON
     const data = JSON.parse(body);
 
+    // Communicate with Inventory service:
+    const inventoryResponse = await sendRequest(
+      "http://localhost:3001/api/inventory",
+      "PUT",
+      JSON.stringify(data)
+    );
+
     console.log("My order:", data);
     res.statusCode = 201;
     res.end(
@@ -47,6 +56,8 @@ export const updateItem = (req: IncomingMessage, res: ServerResponse) => {
     const data = JSON.parse(body);
 
     console.log("FROM API CALL - My item:", data);
+
+    await fetch;
 
     res.statusCode = 201;
     res.end(
